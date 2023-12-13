@@ -23,34 +23,10 @@ public class AwesomeCalculatorModule extends NativeAwesomeCalculatorSpec {
     System.loadLibrary("react-native-awesome-calculator");
   }
 
-  private static native double nativeAdd(double a, double b);
-  private static native double nativeSub(double a, double b);
-  private static native double nativeMul(double a, double b);
-  private static native double nativeDiv(double a, double b);
-  private static native double nativeAnswer();
+  private static native String nativeExecute(String cmd);
 
   @Override
-  public double add(double a, double b) {
-    return nativeAdd(a, b);
-  }
-
-  @Override
-  public double sub(double a, double b) {
-    return nativeSub(a, b);
-  }
-
-  @Override
-  public double mul(double a, double b) {
-    return nativeMul(a, b);
-  }
-
-  @Override
-  public double div(double a, double b) {
-    return nativeDiv(a, b);
-  }
-
-  @Override
-  public double answer() {
-    return nativeAnswer();
+  public String execute(String cmd) {
+    return nativeExecute(cmd);
   }
 }

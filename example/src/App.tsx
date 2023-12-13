@@ -2,24 +2,41 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native'
-import { add, sub, mul, div, answer } from 'react-native-awesome-calculator'
+import { execute } from 'react-native-awesome-calculator'
 
 const x = 12
 const y = 2
 
-const sum = add(x, y)
-const diff = sub(x, y)
-const prod = mul(x, y)
-const quot = div(x, y)
-const ans = answer();
+console.log("x = ", x)
+console.log("y = ", y)
+
+const getSum = (): string => {
+  const add_cmd = JSON.stringify({
+    Add: {
+      x: x,
+      y: y
+    }
+  })
+
+  const sum = JSON.parse(execute(add_cmd))
+  console.log("sum = ", sum);
+  return sum.res
+}
+
+const getAnswer = (): string => {
+  const ans_cmd = JSON.stringify({ Answer: {} })
+  const ans = JSON.parse(execute(ans_cmd))
+  console.log("ans = ", ans)
+  return ans.res
+}
 
 export default function App() {
+  const sum = getSum()
+  const ans = getAnswer()
+
   return (
     <View style={styles.container}>
       <Text>Sum: {sum}</Text>
-      <Text>Difference: {diff}</Text>
-      <Text>Product: {prod}</Text>
-      <Text>Quotient: {quot}</Text>
       <Text>Answer: {ans}</Text>
     </View>
   );

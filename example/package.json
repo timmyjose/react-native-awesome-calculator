@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "cd node_modules/react-native-awesome-calculator/cpp/nativecalc && sh build.sh && cd ../../../ && react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "build:android": "cd android && ./gradlew assembleDebug --no-daemon --console=plain -PreactNativeArchitectures=x86_64",

@@ -10903,11 +10903,10 @@ __metadata:
     pod-install: ^0.1.0
     react: 18.2.0
     react-native: 0.73.0
-    react-native-awesome-calculator: ^0.1.1
   languageName: unknown
   linkType: soft
 
-"react-native-awesome-calculator@^0.1.1, react-native-awesome-calculator@workspace:.":
+"react-native-awesome-calculator@workspace:.":
   version: 0.0.0-use.local
   resolution: "react-native-awesome-calculator@workspace:."
   dependencies:
