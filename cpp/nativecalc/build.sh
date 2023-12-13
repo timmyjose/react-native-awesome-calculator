@@ -8,3 +8,17 @@ cargo ndk --target armv7-linux-androideabi --platform 21 -- build --release
 cargo ndk --target i686-linux-android --platform 21 -- build --release
 cargo ndk --target x86_64-linux-android --platform 21 -- build --release
 
+rm -rf ../target
+mkdir -p ../target/aarch64-linux-android/release
+cp target/aarch64-linux-android/release/libnativecalc.a ../target/aarch64-linux-android/release/
+
+mkdir -p ../target/armv7-linux-androideabi/release
+cp target/armv7-linux-androideabi/release/libnativecalc.a ../target/armv7-linux-androideabi/release/
+
+mkdir -p ../target/i686-linux-android/release
+cp target/i686-linux-android/release/libnativecalc.a ../target/i686-linux-android/release/
+
+mkdir -p ../target/x86_64-linux-android/release
+cp target/x86_64-linux-android/release/libnativecalc.a ../target/x86_64-linux-android/release/
+
+
