@@ -1,14 +1,24 @@
+/* eslint-disable prettier/prettier */
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-awesome-calculator';
+import { StyleSheet, View, Text } from 'react-native'
+import { add, sub, mul, div } from 'react-native-awesome-calculator'
 
-const result = multiply(3, 7);
+const x = 12
+const y = 2
+
+const sum = add(x, y)
+const diff = sub(x, y)
+const prod = mul(x, y)
+const quot = div(x, y)
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Sum: {sum}</Text>
+      <Text>Difference: {diff}</Text>
+      <Text>Product: {prod}</Text>
+      <Text>Quotient: {quot}</Text>
     </View>
   );
 }

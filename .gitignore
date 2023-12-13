@@ -78,3 +78,6 @@ android/keystores/debug.keystore
 lib/
 
 **/npm-cache
+
+cpp/nativecalc/target
+cpp/nativecalc/Cargo.lock
