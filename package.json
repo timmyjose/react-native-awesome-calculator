@@ -1,6 +1,6 @@
 {
   "name": "react-native-awesome-calculator",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Awesome Native calculator",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
