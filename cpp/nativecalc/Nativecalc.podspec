@@ -11,9 +11,9 @@ Pod::Spec.new { |spec|
   spec.ios.deployment_target = '8.0'
   spec.pod_target_xcconfig = {
     'ENABLE_BITCODE' => 'NO',
-    'LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=arm64]' => '${PODS_TARGET_SRCROOT}/../target/aarch64-apple-ios',
-    'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=x86_64]' => '${PODS_TARGET_SRCROOT}/../target/x86_64-apple-ios',
-    'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=arm64]' => '${PODS_TARGET_SRCROOT}/../target/aarch64-apple-ios-sim',
+    'LIBRARY_SEARCH_PATHS[sdk=iphoneos*][arch=arm64]' => '${PODS_TARGET_SRCROOT}/cpp/target/aarch64-apple-ios',
+    'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=x86_64]' => '${PODS_TARGET_SRCROOT}/cpp/target/x86_64-apple-ios',
+    'LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*][arch=arm64]' => '${PODS_TARGET_SRCROOT}/cpp/target/aarch64-apple-ios-sim',
     'OTHER_LDFLAGS' => '-lnativecalc',
   }
   spec.preserve_paths = ['dist/**/*']
