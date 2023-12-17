@@ -7,7 +7,6 @@ pub enum Command {
     Sub { x: f64, y: f64 },
     Mul { x: f64, y: f64 },
     Div { x: f64, y: f64 },
-    Answer,
 }
 
 #[derive(Serialize)]
@@ -57,10 +56,6 @@ fn execute_cmd(cmd: Command) -> Result<CalcResult, Box<dyn std::error::Error>> {
                 (x / y).to_string()
             },
             operation: "division".into(),
-        },
-        Command::Answer => CalcResult {
-            res: 42.0.to_string(),
-            operation: "answer".into(),
         },
     })
 }

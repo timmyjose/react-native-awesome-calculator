@@ -5,10 +5,7 @@ import { StyleSheet, View, Text } from 'react-native'
 import { execute } from 'react-native-awesome-calculator'
 
 const x = 12
-const y = 2
-
-console.log("x = ", x)
-console.log("y = ", y)
+const y = 3
 
 const getSum = (): string => {
   const add_cmd = JSON.stringify({
@@ -23,21 +20,58 @@ const getSum = (): string => {
   return sum.res
 }
 
-const getAnswer = (): string => {
-  const ans_cmd = JSON.stringify({ Answer: {} })
-  const ans = JSON.parse(execute(ans_cmd))
-  console.log("ans = ", ans)
-  return ans.res
+const getDiff = (): string => {
+  const sub_cmd = JSON.stringify({
+    Sub: {
+      x: x,
+      y: y
+    }
+  })
+
+  const diff = JSON.parse(execute(sub_cmd))
+  console.log("diff = ", diff);
+  return diff.res
 }
+
+const getProd = (): string => {
+  const prod_cmd = JSON.stringify({
+    Mul: {
+      x: x,
+      y: y
+    }
+  })
+
+  const prod = JSON.parse(execute(prod_cmd))
+  console.log("prod = ", prod);
+  return prod.res
+}
+
+const getQuot = (): string => {
+  const div_cmd = JSON.stringify({
+    Div: {
+      x: x,
+      y: y
+    }
+  })
+
+  const quot = JSON.parse(execute(div_cmd))
+  console.log("quot = ", quot);
+  return quot.res
+}
+
 
 export default function App() {
   const sum = getSum()
-  const ans = getAnswer()
+  const diff = getDiff()
+  const prod = getProd()
+  const quot = getQuot()
 
   return (
     <View style={styles.container}>
       <Text>Sum: {sum}</Text>
-      <Text>Answer: {ans}</Text>
+      <Text>Difference: {diff}</Text>
+      <Text>Product: {prod}</Text>
+      <Text>Quotient: {quot}</Text>
     </View>
   );
 }
