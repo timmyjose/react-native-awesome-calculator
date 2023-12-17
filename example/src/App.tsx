@@ -4,8 +4,8 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native'
 import { execute } from 'react-native-awesome-calculator'
 
-const x = 12
-const y = 3
+const x = 120
+const y = 24
 
 const getSum = (): string => {
   const add_cmd = JSON.stringify({

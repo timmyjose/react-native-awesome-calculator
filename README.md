@@ -1,6 +1,6 @@
 # react-native-awesome-calculator
 
-Awesome Native calculator
+Awesome Native calculator in Rust.
 
 ## Installation
 
@@ -12,21 +12,18 @@ npm install react-native-awesome-calculator
 
 
 ```js
-import { multiply } from 'react-native-awesome-calculator';
+import { execute } from 'react-native-awesome-calculator';
 
 // ...
 
-const result = multiply(3, 7);
+const add_cmd = JSON.stringify({
+    Add: {
+        x: 12,
+        y: 2
+    }
+})
+const result = JSON.parse(execute(add_cmd));
+const sum = result.res
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
----
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
